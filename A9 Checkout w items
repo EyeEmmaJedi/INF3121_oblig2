@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.avactis.com/" />
+<title>A9 Checkout w/ items</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">A9 Checkout w/ items</td></tr>
+</thead><tbody>
+<tr>
+	<td>assertLocation</td>
+	<td>http://demo.avactis.com/*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>class=top-cart-info-count</td>
+	<td>1 items</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Firstname]</td>
+	<td>John</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Lastname]</td>
+	<td>Smith</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{&quot;uio&quot; + Math.floor(Math.random()*11111) + &quot;@gmail.com&quot;;}</td>
+	<td>checkout_email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Email]</td>
+	<td>${checkout_email}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=billingInfo[Country]</td>
+	<td>label=United States</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Postcode]</td>
+	<td>10007</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=billingInfo[Statemenu]</td>
+	<td>label=New York</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[City]</td>
+	<td>New York</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Phone]</td>
+	<td>22222222</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=checkbox_shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[Firstname]</td>
+	<td>John</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[Lastname]</td>
+	<td>Smith</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[Email]</td>
+	<td>${checkout_email}</td>
+</tr>
+<tr>
+	<td>verifySelectedLabel</td>
+	<td>name=shippingInfo[Country]</td>
+	<td>United States</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[Postcode]</td>
+	<td>10007</td>
+</tr>
+<tr>
+	<td>verifySelectedLabel</td>
+	<td>name=shippingInfo[Statemenu]</td>
+	<td>New York</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[City]</td>
+	<td>New York</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=shippingInfo[Phone]</td>
+	<td>22222222</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Continue Checkout']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>checkout_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=shippingModuleAndMethod[method_code]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@value='Continue Checkout'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>checkout_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Place Order']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.goods-data.clearfix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.note.note-success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=div.note.note-danger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>class=top-cart-info-count</td>
+	<td>0 items</td>
+</tr>
+</tbody></table>
+</body>
+</html>
